@@ -9,8 +9,11 @@ outputs/
 
 sp/
 
-*.ipynb
 README.md
+
+*.ipynb
+!notebooks/
+!notebooks/**/*.ipynb
 
 CN7031- Assignment.pdf
 LOG.md
