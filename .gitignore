@@ -6,7 +6,7 @@ data/
 reports/
 project_descriptions/
 outputs/
-notebooks/
+
 sp/
 
 *.ipynb
