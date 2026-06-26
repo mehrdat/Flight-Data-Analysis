@@ -46,8 +46,14 @@ def _save(fig, filename: str):
 
 
 def _check():
+    global go, px, _HAS_PLOTLY
     if not _HAS_PLOTLY:
-        raise ImportError("plotly is not installed. Run: pip install plotly kaleido")
+        try:
+            import plotly.graph_objects as go
+            import plotly.express as px
+            _HAS_PLOTLY = True
+        except Exception:
+            raise ImportError("plotly is not installed. Run: pip install plotly kaleido")
 
 
 # ---------------------------------------------------------------------------

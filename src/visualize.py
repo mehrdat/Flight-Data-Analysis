@@ -167,7 +167,10 @@ def boxplot_by_group(pdf, group_col, value_col, title, filename, max_groups=12):
     groups = pdf[group_col].value_counts().head(max_groups).index.tolist()
     data = [pdf.loc[pdf[group_col] == g, value_col].dropna().values for g in groups]
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.boxplot(data, labels=groups, showfliers=False)
+    try:
+        ax.boxplot(data, tick_labels=groups, showfliers=False)
+    except TypeError:
+        ax.boxplot(data, labels=groups, showfliers=False)
     ax.set_title(title)
     ax.set_ylabel(value_col)
     plt.xticks(rotation=45, ha="right")
