@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+
+data/
+reports/
+project_descriptions/
+outputs/
+notebooks/
+sp/
+
+*.ipynb
+README.md
+
+CN7031- Assignment.pdf
+LOG.md
